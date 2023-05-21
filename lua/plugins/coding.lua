@@ -1,4 +1,5 @@
 return {
+  --- GO ---
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
@@ -7,7 +8,6 @@ return {
       end
     end,
   },
-  --- GO ---
   {
     "ray-x/go.nvim",
     dependencies = { -- optional packages
