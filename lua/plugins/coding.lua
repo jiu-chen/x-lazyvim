@@ -1,7 +1,11 @@
 return {
   {
-    "echasnovski/mini.surround",
-    enabled = false,
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      if type(opts.ensure_installed) == "table" then
+        vim.list_extend(opts.ensure_installed, { "go", "gomod" })
+      end
+    end,
   },
   --- GO ---
   {
@@ -22,13 +26,6 @@ return {
     "leoluz/nvim-dap-go",
     config = function()
       require("dap-go").setup()
-    end,
-  },
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    opts = function(_, opts)
-      local nls = require("null-ls")
-      table.insert(opts.sources, nls.builtins.formatting.goimports)
     end,
   },
   -- Python --

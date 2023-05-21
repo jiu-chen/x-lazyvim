@@ -1,6 +1,7 @@
 return {
   {
-    "mrjones2014/nvim-ts-rainbow",
+    "echasnovski/mini.surround",
+    enabled = false,
   },
   {
     "tpope/vim-surround",
@@ -20,22 +21,38 @@ return {
       vim.g.mkdp_auto_start = 1
     end,
   },
-  {
-    "folke/noice.nvim",
-    config = function()
-      require("noice").setup({
-        lsp = {
-          signature = {
-            enabled = false,
-          },
-        },
-      })
-    end,
-  },
+  -- {
+  --   "folke/noice.nvim",
+  --   config = function()
+  --     require("noice").setup({
+  --       lsp = {
+  --         signature = {
+  --           enabled = false,
+  --         },
+  --       },
+  --     })
+  --   end,
+  -- },
   {
     "windwp/nvim-ts-autotag",
     config = function()
       require("nvim-ts-autotag").setup()
+    end,
+  },
+  {
+    "HiPhish/nvim-ts-rainbow2",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        rainbow = {
+          enable = true,
+          -- list of languages you want to disable the plugin for
+          -- disable = { 'jsx', 'cpp' },
+          -- Which query to use for finding delimiters
+          query = "rainbow-parens",
+          -- Highlight the entire buffer all at once
+          strategy = require("ts-rainbow").strategy.global,
+        },
+      })
     end,
   },
 }
