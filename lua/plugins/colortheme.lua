@@ -1,12 +1,17 @@
+if true then
+  return {}
+end
 return {
   -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
+  -- { "ellisonleao/gruvbox.nvim" },
+  --
+  { "neanias/everforest-nvim" },
 
-  -- Configure LazyVim to load gruvbox
+  -- Configure LazyVim to load colorscheme
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "everforest",
     },
   },
 }
